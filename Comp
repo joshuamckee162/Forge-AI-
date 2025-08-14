@@ -1,0 +1,16 @@
+import { useStore } from "@/lib/store";
+
+export default function TestDriveHUD() {
+  const telemetry = useStore((s) => s.telemetry);
+
+  if (!telemetry.length) return null;
+
+  const last = telemetry[telemetry.length - 1];
+  return (
+    <div className="fixed bottom-4 left-4 bg-black/80 text-white p-4 rounded-xl shadow-lg space-y-1">
+      <div>Speed: {last.v_kmh.toFixed(1)} km/h</div>
+      <div>RPM: {last.engine_rpm.toFixed(0)}</div>
+      <div>Gear: {last.gear}</div>
+    </div>
+  );
+}
