@@ -1,0 +1,17 @@
+import { create } from "zustand";
+
+type VehicleConfig = Record<string, any>;
+
+interface StoreState {
+  config: VehicleConfig;
+  telemetry: any[];
+  setConfig: (cfg: VehicleConfig) => void;
+  setTelemetry: (data: any[]) => void;
+}
+
+export const useStore = create<StoreState>((set) => ({
+  config: {},
+  telemetry: [],
+  setConfig: (cfg) => set({ config: cfg }),
+  setTelemetry: (data) => set({ telemetry: data }),
+}));
