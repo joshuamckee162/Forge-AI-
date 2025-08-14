@@ -1,0 +1,56 @@
+export const endpoints = [
+  {
+    id: "blueprint",
+    name: "Blueprint Generator",
+    url: "/generate-blueprint",
+    method: "POST",
+    inputs: [
+      { name: "part", type: "select", options: ["engine", "gearbox", "sleeper", "full vehicle"] },
+      { name: "specs", type: "textarea" }
+    ],
+    outputType: "image" // could be "text", "image", or "3d"
+  },
+  {
+    id: "cost",
+    name: "Cost Estimator",
+    url: "/estimate-cost",
+    method: "POST",
+    inputs: [
+      { name: "materials", type: "textarea" },
+      { name: "labor_hours", type: "number" },
+      { name: "features", type: "textarea" }
+    ],
+    outputType: "text"
+  },
+  {
+    id: "marketing",
+    name: "Marketing AI",
+    url: "/generate-pitch",
+    method: "POST",
+    inputs: [
+      { name: "vehicle_name", type: "text" },
+      { name: "target_audience", type: "text" },
+      { name: "key_features", type: "textarea" }
+    ],
+    outputType: "text"
+  },
+  {
+    id: "testdrive",
+    name: "3D Test Drive",
+    url: "/testdrive",
+    method: "POST",
+    inputs: [
+      { name: "config", type: "textarea" },
+      { name: "seconds", type: "number" }
+    ],
+    outputType: "3d"
+  },
+  {
+    id: "corporate",
+    name: "Corporate Dashboard",
+    url: "/corporate-dashboard",
+    method: "GET",
+    inputs: [],
+    outputType: "text"
+  }
+];
