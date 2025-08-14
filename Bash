@@ -1,0 +1,4 @@
+npx create-next-app@latest forge-ai-ui --typescript
+cd forge-ai-ui
+npm install tailwindcss @react-three/fiber @react-three/drei axios zustand framer-motion react-hook-form zod
+npx tailwindcss init -p
