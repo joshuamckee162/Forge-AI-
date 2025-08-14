@@ -1,0 +1,13 @@
+import { endpoints } from "@/lib/endpoints";
+import APIForm from "@/components/APIForm";
+
+export default function Home() {
+  return (
+    <main className="p-6 space-y-6 bg-gray-950 min-h-screen text-white">
+      <h1 className="text-3xl font-bold">Forge AI</h1>
+      {endpoints.map((ep) => (
+        <APIForm key={ep.id} endpoint={ep} />
+      ))}
+    </main>
+  );
+}
