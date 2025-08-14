@@ -1,0 +1,11 @@
+export const generateBlueprints = (vehicleConfig) =>
+  api.post("/ai/blueprints", vehicleConfig);
+
+export const estimateCost = (vehicleConfig) =>
+  api.post("/ai/cost-estimation", vehicleConfig);
+
+export const generateMarketing = (vehicleConfig) =>
+  api.post("/ai/marketing", vehicleConfig);
+
+export const runTestDrive = (vehicleConfig) =>
+  api.post("/ai/test-drive", vehicleConfig);
